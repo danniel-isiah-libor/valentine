@@ -125,7 +125,7 @@
                             :src="state.sign"
                             alt=""
                             width="200"
-                            height="200"
+                            height="150"
                           />
                         </v-col>
 
