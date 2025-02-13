@@ -1,13 +1,13 @@
 <template>
   <v-container class="fill-height">
-    <v-responsive
-      class="align-centerfill-height mx-auto"
-      max-width="900"
-    >
+    <v-responsive class="align-centerfill-height mx-auto">
       <v-row>
         <v-col cols="12">
           <v-form v-if="!state.done">
-            <v-card title="Registration">
+            <v-card
+              title="Registration"
+              variant="flat"
+            >
               <v-card-text>
                 <v-text-field
                   v-model="state.first_name"
@@ -58,7 +58,7 @@
                 <Vue3Signature
                   ref="signature1"
                   :sigOption="state.option"
-                  :w="'500px'"
+                  :w="'320px'"
                   :h="'400px'"
                   style="border: 1px solid #000"
                 ></Vue3Signature>
