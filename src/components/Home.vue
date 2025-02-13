@@ -86,9 +86,7 @@
             >
               <v-carousel-item>
                 <v-card class="text-center">
-                  <v-card-title>
-                    CONGRATULATIONS TO THE NEWLYWEDS!
-                  </v-card-title>
+                  <v-card-title> CONGRATS TO THE NEWLYWEDS! </v-card-title>
 
                   <v-card-subtitle> Eme lang </v-card-subtitle>
 
@@ -127,6 +125,7 @@
                             :src="state.sign"
                             alt=""
                             width="200"
+                            height="100"
                           />
                         </v-col>
 
@@ -231,49 +230,19 @@
     state.sign = signature1.value.save('image/jpeg')
     state.done = true
 
-    const startConfetti = () => {
-      appContext.config.globalProperties.$confetti.start({
-        particles: [
-          {
-            type: 'heart',
-          },
-        ],
-        defaultColors: ['red', 'pink', '#ba0000'],
-        particlesPerFrame: 0.5,
-        defaultDropRate: 5,
-      })
-    }
-
-    const stopConfetti = () => {
-      appContext.config.globalProperties.$confetti.stop()
-    }
-
-    startConfetti()
-
-    const intervalId = setInterval(() => {
-      stopConfetti()
-      setTimeout(startConfetti, 10000)
-    }, 20000)
-
-    setTimeout(() => {
-      clearInterval(intervalId)
-      stopConfetti()
-    }, 60000)
+    appContext.config.globalProperties.$confetti.start({
+      particles: [
+        {
+          type: 'heart',
+        },
+      ],
+      defaultColors: ['red', 'pink', '#ba0000'],
+      particlesPerFrame: 0.5,
+      defaultDropRate: 5,
+    })
   }
 
   const clear = () => {
     signature1.value.clear()
   }
-
-  // const sendEmail = () => {
-  //   Email.send({
-  //     Host: 'smtp.gmail.com',
-  //     Username: 'disaiahlibor@gmail.com',
-  //     Password: 'cspe ndyo ubxy xbub',
-  //     To: 'disaiahlibor@gmail.com', // state.email,
-  //     From: 'disaiahlibor@gmail.com',
-  //     Subject: "Happy Valentine's Day",
-  //     Body: 'And this is the body',
-  //   }).then((message) => console.log(message))
-  // }
 </script>
