@@ -114,7 +114,7 @@
                           <img
                             :src="sign"
                             alt=""
-                            width="150"
+                            width="100"
                           />
                         </v-col>
 
@@ -126,7 +126,7 @@
                           <img
                             :src="state.sign"
                             alt=""
-                            width="250"
+                            width="200"
                           />
                         </v-col>
 
